@@ -1,13 +1,50 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --color-text: hsl(237deg, 18%, 59%);
+  --color-numbers: hsl(345deg, 95%, 68%);
+  --color-title: hsl(0deg, 0%, 100%);
+  --color-background-bottom: hsl(236deg, 21%, 26%);
+  --color-background-top: hsl(235deg, 16%, 14%);
+  --color-shadow: hsl(234deg, 17%, 12%);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+
+  min-height: 100%;
+
+  font-family: "Red Hat Text", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+
+  background: linear-gradient(hsl(234deg, 17%, 12%), hsl(235deg, 16%, 14%));
+}
+
+a {
+  color: hsl(228deg, 45%, 44%);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 100%;
+  min-height: 100vh;
+}
+
+.title {
+  color: var(--color-title);
+}
+
+footer {
+  color: var(--color-title);
+  background-image: url("../public/pattern-hills.svg");
 }
