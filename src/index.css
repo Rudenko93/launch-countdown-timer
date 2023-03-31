@@ -14,37 +14,122 @@
 }
 
 body {
-  display: flex;
-  justify-content: center;
-
-  min-height: 100%;
+  width: 100%;
 
   font-family: "Red Hat Text", sans-serif;
-  font-size: 14px;
   font-weight: 700;
 
-  background: linear-gradient(hsl(234deg, 17%, 12%), hsl(235deg, 16%, 14%));
+  background-color: hsl(235deg, 16%, 14%);
+  background-image: url("../public/images/bg-stars.svg");
 }
 
-a {
-  color: hsl(228deg, 45%, 44%);
-}
-
-.app {
+.content-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
-  height: 100%;
-  min-height: 100vh;
+  height: 65vh;
 }
 
 .title {
+  width: 86%;
+  margin: 15px 0 45px;
+
+  font-size: 21px;
   color: var(--color-title);
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 96%;
+}
+
+.time {
+  margin: 0.5rem;
+  text-align: center;
+}
+
+.box {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 70px;
+  height: 70px;
+
+  font-size: 33px;
+  color: hsl(345deg, 95%, 68%);
+
+  background: linear-gradient(
+    hsl(234deg, 18%, 20%) 50%,
+    hsl(234deg, 17%, 23%) 50%
+  );
+  border-radius: 5px;
+  box-shadow: 0 5px rgba(10, 10, 10, 25%);
+}
+
+.box::after {
+  content: "";
+
+  position: absolute;
+  left: -1%;
+
+  width: 5%;
+  height: 6%;
+
+  background-color: rgba(10, 10, 10, 65%);
+  border-radius: 2px;
+}
+
+.box::before {
+  content: "";
+
+  position: absolute;
+  right: -1%;
+
+  width: 6%;
+  height: 7%;
+
+  background-color: rgba(10, 10, 10, 65%);
+  border-radius: 2px;
+}
+
+.days p,
+.hours p,
+.minutes p,
+.seconds p {
+  padding-top: 10px;
+  font-size: 7px;
+  color: hsl(237deg, 18%, 59%);
+  letter-spacing: 3px;
 }
 
 footer {
+  position: fixed;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 25vh;
+
   color: var(--color-title);
-  background-image: url("../public/pattern-hills.svg");
+
+  background-image: url("../public/images/pattern-hills.svg");
+  background-size: cover;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  width: 140px;
 }
