@@ -1,36 +1,32 @@
-import "./index.css"
+import { useState, useEffect } from "react"
+import { Counter } from "./Counter"
 
 const App: React.FC = (): JSX.Element => {
+  const [distance, setDistance] = useState<number>(2000)
+
+  useEffect(() => {
+    const currentTime = new Date().getTime()
+
+    let timePoint = window.localStorage.getItem("interval1290291")
+    if (!timePoint || currentTime > parseInt(timePoint)) {
+      timePoint = `${new Date().getTime() + 99965001}`
+      window.localStorage.setItem("interval1290291", `${timePoint}`)
+    }
+    setDistance(parseInt(timePoint!) - currentTime)
+  }, [])
+
   return (
     <div>
       <div className="content-wrapper">
         <div className="title">
           <p>WE'RE LAUNCHING SOON</p>
         </div>
-        <div className="counter">
-          <div className="time days">
-            <div className="box">23</div>
-            <p>DAYS</p>
-          </div>
-          <div className="time hours">
-            <div className="box">23</div>
-            <p>HOURS</p>
-          </div>
-          <div className="time minutes">
-            <div className="box">23</div>
-            <p>MINUTES</p>
-          </div>
-          <div className="time seconds">
-            <div className="box">23</div>
-            <p>SECONDS</p>
-          </div>
-        </div>
+        <Counter distance={distance} setDistance={setDistance} />
       </div>
-
       <footer>
         <div className="icons">
-          <img src="/images/icon-facebook.svg" alt="a" />
-          <img src="/images/icon-pinterest.svg" alt="b" />
+          <img src="/images/icon-facebook.svg" alt="" />
+          <img src="/images/icon-pinterest.svg" alt="" />
           <img src="/images/icon-instagram.svg" alt="c" />
         </div>
       </footer>

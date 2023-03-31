@@ -73,6 +73,12 @@ body {
   );
   border-radius: 5px;
   box-shadow: 0 5px rgba(10, 10, 10, 25%);
+
+  transition: all 0.3s ease-in;
+}
+
+.box .active {
+  transform: translateY(360deg);
 }
 
 .box::after {
@@ -81,8 +87,8 @@ body {
   position: absolute;
   left: -1%;
 
-  width: 5%;
-  height: 6%;
+  width: 6%;
+  height: 7%;
 
   background-color: rgba(10, 10, 10, 65%);
   border-radius: 2px;
@@ -132,4 +138,32 @@ footer {
   display: flex;
   justify-content: space-between;
   width: 140px;
+}
+
+@media (min-width: 641px) {
+  .title {
+    width: 86%;
+    margin: 35px 0 55px;
+    font-size: 28px;
+    letter-spacing: 7px;
+  }
+
+  .box {
+    width: 145px;
+    height: 145px;
+
+    font-size: 40px;
+
+    border-radius: 8px;
+    box-shadow: 0 10px rgba(10, 10, 10, 25%);
+  }
+
+  .days p,
+  .hours p,
+  .minutes p,
+  .seconds p {
+    padding-top: 20px;
+    font-size: 14px;
+    letter-spacing: 6px;
+  }
 }
